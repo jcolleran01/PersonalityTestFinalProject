@@ -10,6 +10,8 @@ import android.os.Bundle;
 public class MainActivity extends AppCompatActivity {
     private Button mTrueButton;
     private Button mFalseButton;
+    private Button mIDontKnowButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         mTrueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                makeTop("Correct!");
+                makeTop("Interesting!");
             }
         });
 
@@ -26,10 +28,18 @@ public class MainActivity extends AppCompatActivity {
         mFalseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                makeTop ("Incorrect!");
+                makeTop ("So you are one of those people!");
+            }
+        });
+        mIDontKnowButton = (Button) findViewById(R.id.i_dont_know_button);
+        mIDontKnowButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                makeTop ("WHY CANT YOU DECIDE!");
             }
         });
     }
+
     public void makeTop(String toastDisplay){
         Toast toast = Toast.makeText(MainActivity.this, toastDisplay, Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.TOP, 0, 200);
