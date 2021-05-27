@@ -8,24 +8,25 @@ import android.widget.Toast;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
-    private Button mTrueButton;
-    private Button mFalseButton;
+    private Button mChoiceTwo;
+    private Button mChoiceOne;
     private Button mIDontKnowButton;
+    private Button mQuitButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mTrueButton = (Button) findViewById(R.id.true_button);
-        mTrueButton.setOnClickListener(new View.OnClickListener() {
+        mChoiceTwo = (Button) findViewById(R.id.choice_two);
+        mChoiceTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 makeTop("Interesting!");
             }
         });
 
-        mFalseButton = (Button) findViewById(R.id.false_button);
-        mFalseButton.setOnClickListener(new View.OnClickListener() {
+        mChoiceOne = (Button) findViewById(R.id.choice_one);
+        mChoiceOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 makeTop ("So you are one of those people!");
@@ -36,6 +37,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 makeTop ("WHY CANT YOU DECIDE!");
+            }
+        });
+        mQuitButton = (Button) findViewById(R.id.quit_button);
+        mQuitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                makeTop ("LAME");
             }
         });
     }
