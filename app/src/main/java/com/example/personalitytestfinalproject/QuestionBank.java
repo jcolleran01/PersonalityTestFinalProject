@@ -6,18 +6,18 @@ public class QuestionBank {
             "1",
             "2",
             "3",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
             "last quetion"
     };
     public static String[][] mChoices =  {
@@ -39,7 +39,7 @@ public class QuestionBank {
             {"good","bad"},
     };
 
-    public static int[] mPersonalityScore = {0, 0, 0, 0};
+    public static double[][] mPersonalityScore = {{0, 0}, {0, 0}, {0, 0}, {0,0}};
 
     public static void updateQuestion(int i, boolean bool){
         int remainder = i % 4;
@@ -53,9 +53,11 @@ public class QuestionBank {
             index = 3;
         }
         if (bool){
-            mPersonalityScore[index]++;
+            mPersonalityScore[0][index]++;
+
         }
         else if (!bool){
+            mPersonalityScore[1][index]++;
         }
     }
 
