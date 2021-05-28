@@ -10,7 +10,6 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
     private TextView mQuetions;
-    private TextView mChoices;
     private Button mChoiceTwo;
     private Button mChoiceOne;
     private Button mIDontKnowButton;
@@ -33,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
                     QuestionBank.updateQuestion(1, false);
                 }
                 if (quetionNum == 15) {
-                    mQuetions.setText("");
-                    //mQuetions.setText(finalPersonality(QuestionBank.mPersonalityScore[1], QuestionBank.mPersonalityScore[2]));
+                    //mQuetions.setText("");
+                    mQuetions.setText(finalPersonality(QuestionBank.mPersonalityScore[1], QuestionBank.mPersonalityScore[2]));
                     mChoiceOne.setText("");
                     mChoiceTwo.setText("");
                 } else {
@@ -57,9 +56,9 @@ public class MainActivity extends AppCompatActivity {
                     QuestionBank.updateQuestion(1, false);
                 }
                 if (quetionNum == 15) {
-                    //mQuetions.setText(finalPersonality(QuestionBank.mPersonalityScore[1], QuestionBank.mPersonalityScore[2]));
+                    mQuetions.setText(finalPersonality(QuestionBank.mPersonalityScore[1], QuestionBank.mPersonalityScore[2]));
                     //instead of "" put score
-                    mQuetions.setText("");
+                    //mQuetions.setText("");
                     mChoiceOne.setText("");
                     mChoiceTwo.setText("");
                 } else {
@@ -76,9 +75,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 makeTop("WHY CANT YOU DECIDE!");
                 if (quetionNum == 15) {
-                    //mQuetions.setText(finalPersonality(QuestionBank.mPersonalityScore[1], QuestionBank.mPersonalityScore[2]));
+                    mQuetions.setText(finalPersonality(QuestionBank.mPersonalityScore[1], QuestionBank.mPersonalityScore[2]));
                     //instead of "" put score
-                    mQuetions.setText("");
+                    //mQuetions.setText("");
                     mChoiceOne.setText("");
                     mChoiceTwo.setText("");
                 } else {
@@ -118,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         String[] lettersESTJ = {"E", "S", "T", "J"};
         String[] lettersINFP = {"I", "N", "F", "P"};
         //Find the percent
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < answerA.length; i++) {
             percentAB[i] = (answerB[i] / (answerA[i] + answerB[i])) * 100.0;
             percentRounded[i] = (int) Math.round(percentAB[i]);
             if (percentRounded[i] == 50) {
@@ -129,13 +128,10 @@ public class MainActivity extends AppCompatActivity {
                 letters[i] = lettersINFP[i];
             }
         }
-        if (letters[] = "ESTJ") {
-
-        }
         String str = "";
         for (int i = 0; i < letters.length; i++){
             str += letters[i];
         }
-
+        return str;
     }
 }
