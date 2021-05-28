@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
+    <TextView
+        android:id="@+id/question_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/quetion_name"
+        android:layout_marginTop="163dp"
+        android:padding="24dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/choice_one"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="341dp"
+        android:layout_marginBottom="218dp"
+        android:padding="10dp"
+        android:text="@string/choice_two_start"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:backgroundTint="#00BCD4"
+        app:icon="@android:drawable/ic_menu_send"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/quit_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/choice_two"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:padding="10dp"
+        android:text="@string/choice_one_start"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:backgroundTint="#00BCD4"
+        app:icon="@android:drawable/ic_menu_send"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/choice_one"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.638" />
+
+    <Button
+        android:id="@+id/i_dont_know_button"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:padding="10dp"
+        android:text="I don't know!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:backgroundTint="#00BCD4"
+        app:icon="@android:drawable/ic_menu_send"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/choice_one"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.795" />
+
+    <Button
+        android:id="@+id/quit_button"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginBottom="76dp"
+        android:padding="10dp"
+        android:text="Quit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:backgroundTint="#EA0909"
+        app:icon="@android:drawable/ic_delete"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/choice_one" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
