@@ -53,11 +53,11 @@ public class QuestionBank {
             index = 3;
         }
         if (bool){
-            mPersonalityScore[0][index]++;
+            mPersonalityScore[index][0]++;
 
         }
         else if (!bool){
-            mPersonalityScore[1][index]++;
+            mPersonalityScore[index][1]++;
         }
     }
 
