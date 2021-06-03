@@ -42,12 +42,10 @@ public class QuestionBank {
             {"Worse","Better"},
     };
 
-    public static double[][] mPersonalityScore = {{0, 0}, {0, 0}, {0, 0}, {0,0}};
 
     public static void updateQuestion(double answerA[], double answerB[], int i, boolean bool){
         int remainder = i % 4;
         int index = 0;
-        //Finds question catagory
         if (remainder == 1) {
             index = 1;
         } else if (remainder == 2) {

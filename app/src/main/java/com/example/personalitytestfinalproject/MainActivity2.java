@@ -194,11 +194,11 @@ public class MainActivity2 extends AppCompatActivity {
         } else if (str.equals("IXTJ")) {
             return "super boy";
         } else if (str.equals("IXTP")) {
-            return "Hawk eye";
+            return "Wanda";
         } else if (str.equals("IXFP")) {
-            return "The Atom";
+            return "Captain America";
         } else if (str.equals("IXFJ")) {
-            return "Green Lantern";
+            return "Robin";
         } else if (str.equals("ESXJ")) {
             return "Cosmic boy";
         } else if (str.equals("ESXP")) {
@@ -210,7 +210,7 @@ public class MainActivity2 extends AppCompatActivity {
         } else if (str.equals("ISXJ")) {
             return "Black Widow";
         } else if (str.equals("ISXP")) {
-            return "Dr. Strange";
+            return "Thor";
         } else if (str.equals("INXJ")) {
             return "Aqua Man";
         } else if (str.equals("INXP")) {
@@ -218,15 +218,15 @@ public class MainActivity2 extends AppCompatActivity {
         } else if (str.equals("ESTX")) {
             return "Mr. Fantastic";
         } else if (str.equals("ESFX")) {
-            return "Professor X";
+            return "Robin";
         } else if (str.equals("ENTX")) {
             return "Green arrow";
         } else if (str.equals("ENFX")) {
             return "Bat women";
         } else if (str.equals("ISTX")) {
-            return "Black Panther";
+            return "Superman";
         } else if (str.equals("ISFX")) {
-            return "Batman";
+            return "Batgirl";
         } else if (str.equals("INTX")) {
             return "Flash";
         } else if (str.equals("INFX")) {
@@ -254,7 +254,7 @@ public class MainActivity2 extends AppCompatActivity {
         } else if (str.equals("XXTP")) {
             return "Superman";
         } else if (str.equals("XXFJ")) {
-            return "Beast boy";
+            return "Iron Man";
         } else if (str.equals("EXXJ")) {
             return "Iron Man";
         } else if (str.equals("EXXP")) {
@@ -286,9 +286,9 @@ public class MainActivity2 extends AppCompatActivity {
         } else if (str.equals("EXFX")) {
             return "ant man";
         } else if (str.equals("IXFX")) {
-            return "Silver Surfer";
+            return "Robin";
         } else if (str.equals("XXXX")) {
-            return "EVANLEE";
+            return "EVAN LEE";
         } else {
            return "Anish C";
         }
