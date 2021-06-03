@@ -17,27 +17,26 @@ public class MainActivity2 extends AppCompatActivity {
     private Button mIDontKnowButton;
     private Button mQuitButton;
     private int quetionNum = 0;
+    double[] answerA = new double[4];
+    double[] answerB = new double[4];
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        double[] answerA = new double[4];
-        double[] answerB = new double[4];
         setContentView(R.layout.activity_main2);
         mChoiceTwo = (Button) findViewById(R.id.choice_two);
         mChoiceTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 makeTop("Interesting!");
-                QuestionBank.updateQuestion(answerA,answerB, 1, false);
+                QuestionBank.updateQuestion(answerA,answerB, quetionNum, false);
                 System.out.println("b");
 
                 if (quetionNum == 15) {
-                    //mQuetions.setText("");
-                    mQuetions.setText(finalPersonality(answerA, answerB));
-
-                    mChoiceTwo.setText("");
+                    mQuetions.setText("Your Super hero is:");
+                    mChoiceOne.setText(finalPersonality(answerA, answerB));
+                    mChoiceTwo.setText("Have fun fighting crime!");
                 } else {
                     quetionNum++;
                     mQuetions.setText(QuestionBank.mQuetions[quetionNum]);
@@ -52,15 +51,14 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 makeTop("So you are one of those people!");
-                QuestionBank.updateQuestion(answerA,answerB,1, true);
+                QuestionBank.updateQuestion(answerA,answerB,quetionNum, true);
                 System.out.println("a");
 
                 if (quetionNum == 15) {
-                    mQuetions.setText(finalPersonality(answerA, answerB));
-                    //instead of "" put score
-                    //mQuetions.setText("");
-                    mChoiceOne.setText("");
-                    mChoiceTwo.setText("");
+                    mQuetions.setText("Your Super hero is:");
+                    mChoiceOne.setText(finalPersonality(answerA, answerB));
+                    mChoiceTwo.setText("Have fun fighting crime!");
+                    mIDontKnowButton.setText("Thank You For Playing");
                 } else {
                     quetionNum++;
                     mQuetions.setText(QuestionBank.mQuetions[quetionNum]);
@@ -75,11 +73,10 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View v) {
                 makeTop("WHY CANT YOU DECIDE!");
                 if (quetionNum == 15) {
-                    mQuetions.setText("hi");
-                    //instead of "" put score
-                    //mQuetions.setText("");
-                    mChoiceOne.setText("");
-                    mChoiceTwo.setText("");
+                    mQuetions.setText("Your Super hero is:");
+                    mChoiceOne.setText(finalPersonality(answerA, answerB));
+                    mChoiceTwo.setText("Have fun fighting crime!");
+                    mIDontKnowButton.setText("Thank You For Playing");
                 } else {
                     quetionNum++;
                     mQuetions.setText(QuestionBank.mQuetions[quetionNum]);
@@ -121,50 +118,7 @@ public class MainActivity2 extends AppCompatActivity {
         String[] letters = new String[4];
         String[] lettersESTJ = {"E", "S", "T", "J"};
         String[] lettersINFP = {"I", "N", "F", "P"};
-        //Find the percent
-        /*
-        if ((double) (answerA[0] / (answerA[0] + answerA[1])) == 50){
-            letters[0] = "X";
-        }
-        else if ((double) (answerA[0] / (answerA[0] + answerA[1])) < 50){
-            letters[0] = "E";
-        }
-        else if ((double) (answerA[0] / (answerA[0] + answerA[1])) > 50){
-            letters[0] = "I";
-        }
-        if ((double) (answerB[0] / (answerB[0] + answerB[1])) == 50){
-            letters[1] = "X";
-        }
-        else if ((double) (answerB[0] / (answerB[0] + answerB[1])) < 50){
-            letters[1] = "S";
-        }
-        else if ((double) (answerB[0] / (answerB[0] + answerB[1])) > 50){
-            letters[1] = "N";
-        }
-        if ((double) (answerC[0] / (answerC[0] + answerC[1])) == 50){
-            letters[2] = "X";
-        }
-        else if ((double) (answerC[0] / (answerC[0] + answerC[1])) < 50){
-            letters[2] = "T";
-        }
-        else if ((double) (answerC[0] / (answerC[0] + answerC[1])) > 50){
-            letters[2] = "F";
-        }
-        if ((double) (answerD[0] / (answerD[0] + answerD[1])) == 50){
-            letters[3] = "X";
-        }
-        else if ((double) (answerD[0] / (answerD[0] + answerD[1])) < 50){
-            letters[3] = "J";
-        }
-        else if ((double) (answerD[0] / (answerD[0] + answerD[1])) > 50){
-            letters[3] = "P";
-        }
-        String str = "";
-        for (int i = 0; i < 3; i++){
-            str += letters[i];
-        }
-        return str;
-        */
+
         for (int i = 0; i < answerA.length; i++) {
             percentAB[i] = (answerB[i] / (answerA[i] + answerB[i])) * 100.0;
             percentRounded[i] = (int) Math.round(percentAB[i]);
@@ -180,167 +134,163 @@ public class MainActivity2 extends AppCompatActivity {
         for (int i = 0; i < letters.length; i++){
             str += letters[i];
         }
-        return str;
 
-        /*
         if (str.equals("ESTJ")) {
-            return "1";
+            return "Hulk";
         } else if (str.equals("ESTP")) {
-            return "2";
+            return "Superman";
         } else if (str.equals("ESFP")) {
-            return "3";
+            return "Wonder Man";
         } else if (str.equals("ESFJ")) {
-            return "4";
+            return "Iron Man";
         } else if (str.equals("ENTJ")) {
-            return "5";
+            return "Star Fire";
         } else if (str.equals("ENTP")) {
-            return "6";
+            return "Spider man";
         } else if (str.equals("ENFP")) {
-            return "7";
+            return "Captain America";
         } else if (str.equals("ENFJ")) {
-            return "8";
+            return "Nick Fury";
         } else if (str.equals("ISTJ")) {
-            return "9";
+            return "Wanda";
         } else if (str.equals("ISTP")) {
-            return "10";
+            return "Beast boy";
         } else if (str.equals("ISFP")) {
-            return "11";
+            return "Batman";
         } else if (str.equals("ISFJ")) {
-            return "12";
+            return "Star-Lord";
         } else if (str.equals("INTJ")) {
-            return "13";
+            return "Shazam";
         } else if (str.equals("INTP")) {
-            return "14";
+            return "Flash";
         } else if (str.equals("INFP")) {
-            return "15";
+            return "Robin (Teen Titans Go)";
         } else if (str.equals("INFJ")) {
-            return "16";
+            return "Antman";
         } else if (str.equals("XSTJ")) {
-            return "17";
+            return "She-Hulk";
         } else if (str.equals("XSTP")) {
-            return "18";
+            return "Vision";
         } else if (str.equals("XSFP")) {
-            return "19";
+            return "Captain America";
         } else if (str.equals("XSFJ")) {
-            return "20";
+            return "Iron man";
         } else if (str.equals("XNTJ")) {
-            return "21";
+            return "Star Fire";
         } else if (str.equals("XNTP")) {
-            return "22";
+            return "Warlock";
         } else if (str.equals("XNFP")) {
-            return "23";
+            return "Flash";
         } else if (str.equals("XNFJ")) {
-            return "24";
+            return "Rocket Racoon";
         } else if (str.equals("EXTJ")) {
-            return "25";
+            return "Beast boy";
         } else if (str.equals("EXTP")) {
-            return "26";
+            return "Raven";
         } else if (str.equals("EXFP")) {
-            return "27";
+            return "Falcon";
         } else if (str.equals("EXFJ")) {
-            return "28";
+            return "Hawk eye";
         } else if (str.equals("IXTJ")) {
-            return "29";
+            return "super boy";
         } else if (str.equals("IXTP")) {
-            return "30";
+            return "Hawk eye";
         } else if (str.equals("IXFP")) {
-            return "31";
+            return "The Atom";
         } else if (str.equals("IXFJ")) {
-            return "32";
+            return "Green Lantern";
         } else if (str.equals("ESXJ")) {
-            return "33";
+            return "Cosmic boy";
         } else if (str.equals("ESXP")) {
-            return "34";
+            return "Iron fist";
         } else if (str.equals("ENXJ")) {
-            return "35";
+            return "silver surfer";
         } else if (str.equals("ENXP")) {
-            return "36";
+            return "Deadpool";
         } else if (str.equals("ISXJ")) {
-            return "37";
+            return "Black Widow";
         } else if (str.equals("ISXP")) {
-            return "38";
+            return "Dr. Strange";
         } else if (str.equals("INXJ")) {
-            return "39";
+            return "Aqua Man";
         } else if (str.equals("INXP")) {
-            return "40";
+            return "Martian Manhunter";
         } else if (str.equals("ESTX")) {
-            return "41";
+            return "Mr. Fantastic";
         } else if (str.equals("ESFX")) {
-            return "42";
+            return "Professor X";
         } else if (str.equals("ENTX")) {
-            return "43";
+            return "Green arrow";
         } else if (str.equals("ENFX")) {
-            return "44";
+            return "Bat women";
         } else if (str.equals("ISTX")) {
-            return "45";
+            return "Black Panther";
         } else if (str.equals("ISFX")) {
-            return "46";
+            return "Batman";
         } else if (str.equals("INTX")) {
-            return "47";
+            return "Flash";
         } else if (str.equals("INFX")) {
-            return "48";
+            return "Antman";
         } else if (str.equals("XXXJ")) {
-            return "49";
+            return "Tony Stark";
         } else if (str.equals("XXXP")) {
-            return "50";
+            return "Batman";
         } else if (str.equals("EXXX")) {
-            return "51";
+            return "Spider man";
         } else if (str.equals("IXXX")) {
-            return "52";
+            return "StarLord";
         } else if (str.equals("XSXX")) {
-            return "53";
+            return "Hulk";
         } else if (str.equals("XNXX")) {
-            return "54";
+            return "Flash";
         } else if (str.equals("XXTX")) {
-            return "55";
+            return "Raven";
         } else if (str.equals("XXFX")) {
-            return "56";
+            return "Falcon";
         } else if (str.equals("XXTJ")) {
-            return "57";
+            return "Dr. Strange";
         } else if (str.equals("XXFP")) {
-            return "58";
+            return "Batman";
         } else if (str.equals("XXTP")) {
-            return "59";
+            return "Superman";
         } else if (str.equals("XXFJ")) {
-            return "60";
+            return "Beast boy";
         } else if (str.equals("EXXJ")) {
-            return "61";
+            return "Iron Man";
         } else if (str.equals("EXXP")) {
-            return "62";
+            return "Spider Man";
         } else if (str.equals("IXXJ")) {
-            return "63";
+            return "Thor";
         } else if (str.equals("IXXP")) {
-            return "64";
+            return "Aqua Man";
         } else if (str.equals("ESXX")) {
-            return "65";
+            return "Iron Man";
         } else if (str.equals("ENXX")) {
-            return "66";
+            return "Captain America";
         } else if (str.equals("ISXX")) {
-            return "67";
+            return "Cyborg";
         } else if (str.equals("INXX")) {
-            return "68";
+            return "Flash";
         } else if (str.equals("XNXJ")) {
-            return "69";
+            return "Flash";
         } else if (str.equals("XSXJ")) {
-            return "70";
+            return "Iron Man";
         } else if (str.equals("XSXP")) {
-            return "71";
+            return "Hulk";
         } else if (str.equals("XNXP")) {
-            return "72";
+            return "Flash";
         } else if (str.equals("EXTX")) {
-            return "73";
+            return "Dr. Strange";
         } else if (str.equals("IXTX")) {
-            return "74";
+            return "Spider man";
         } else if (str.equals("EXFX")) {
-            return "75";
+            return "ant man";
         } else if (str.equals("IXFX")) {
-            return "76";
+            return "Silver Surfer";
         } else if (str.equals("XXXX")) {
-            return "78";
+            return "EVANLEE";
         } else {
-           return "79";
+           return "Anish C";
         }
-       */
-        //return str;
     }
 }

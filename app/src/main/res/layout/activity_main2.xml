@@ -56,7 +56,7 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:padding="10dp"
-        android:text="I don't know!"
+        android:text="@string/I_dont_know_start"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:backgroundTint="#00BCD4"
         app:icon="@android:drawable/ic_menu_send"

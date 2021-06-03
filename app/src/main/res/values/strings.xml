@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">PersonalityTestFinalProject</string>
-    <string name="quetion_name">What is your favorite color</string>
-    <string name="choice_one_start">Red</string>
-    <string name="choice_two_start">Blue</string>
+    <string name="quetion_name">Who would you rather save from falling off a bridge?</string>
+    <string name="choice_one_start">20 strangers</string>
+    <string name="choice_two_start">"1 family member"</string>
+    <string name="I_dont_know_start">"I dont know"</string>
 </resources>
