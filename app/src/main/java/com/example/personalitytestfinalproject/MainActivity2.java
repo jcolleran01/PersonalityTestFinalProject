@@ -28,15 +28,17 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 makeTop("Interesting!");
+                double[] answerA = new double[4];
+                double[] answerB = new double[4];
                 if (v.getId() == R.id.choice_one) {
-                    QuestionBank.updateQuestion(1, true);
+                    QuestionBank.updateQuestion(answerA,answerB,1, true);
                 } else if (v.getId() == R.id.choice_two) {
-                    QuestionBank.updateQuestion(1, false);
+                    QuestionBank.updateQuestion(answerA,answerB, 1, false);
                 }
                 if (quetionNum == 15) {
                     //mQuetions.setText("");
-                    mQuetions.setText(finalPersonality(QuestionBank.mPersonalityScore[0], QuestionBank.mPersonalityScore[1], QuestionBank.mPersonalityScore[2], QuestionBank.mPersonalityScore[3]));
-                    mChoiceOne.setText("");
+                    mQuetions.setText(finalPersonality(answerA, answerB));
+
                     mChoiceTwo.setText("");
                 } else {
                     quetionNum++;
@@ -52,13 +54,15 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 makeTop("So you are one of those people!");
+                double[] answerA = new double[4];
+                double[] answerB = new double[4];
                 if (v.getId() == R.id.choice_one) {
-                    QuestionBank.updateQuestion(1, true);
+                    QuestionBank.updateQuestion(answerA,answerB,1, true);
                 } else if (v.getId() == R.id.choice_two) {
-                    QuestionBank.updateQuestion(1, false);
+                    QuestionBank.updateQuestion(answerA,answerB, 1, false);
                 }
                 if (quetionNum == 15) {
-                    mQuetions.setText(finalPersonality(QuestionBank.mPersonalityScore[0], QuestionBank.mPersonalityScore[1], QuestionBank.mPersonalityScore[2], QuestionBank.mPersonalityScore[3]));
+                    mQuetions.setText(finalPersonality(answerA, answerB));
                     //instead of "" put score
                     //mQuetions.setText("");
                     mChoiceOne.setText("");
@@ -77,7 +81,7 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View v) {
                 makeTop("WHY CANT YOU DECIDE!");
                 if (quetionNum == 15) {
-                    mQuetions.setText(finalPersonality(QuestionBank.mPersonalityScore[0], QuestionBank.mPersonalityScore[1], QuestionBank.mPersonalityScore[2], QuestionBank.mPersonalityScore[3]));
+                    mQuetions.setText("hi");
                     //instead of "" put score
                     //mQuetions.setText("");
                     mChoiceOne.setText("");
@@ -117,13 +121,14 @@ public class MainActivity2 extends AppCompatActivity {
         toast.show();
     }
 
-    public static String finalPersonality(double answerA[], double answerB[], double answerC[], double answerD[]) {
+    public static String finalPersonality(double answerA[], double answerB[]) {
         double[] percentAB = new double[4];
         int[] percentRounded = new int[4];
         String[] letters = new String[4];
         String[] lettersESTJ = {"E", "S", "T", "J"};
         String[] lettersINFP = {"I", "N", "F", "P"};
         //Find the percent
+        /*
         if ((double) (answerA[0] / (answerA[0] + answerA[1])) == 50){
             letters[0] = "X";
         }
@@ -165,8 +170,8 @@ public class MainActivity2 extends AppCompatActivity {
             str += letters[i];
         }
         return str;
-        //
-        /*for (int i = 0; i < answerA.length; i++) {
+        */
+        for (int i = 0; i < answerA.length; i++) {
             percentAB[i] = (answerB[i] / (answerA[i] + answerB[i])) * 100.0;
             percentRounded[i] = (int) Math.round(percentAB[i]);
             if (percentRounded[i] == 50) {
@@ -181,6 +186,8 @@ public class MainActivity2 extends AppCompatActivity {
         for (int i = 0; i < letters.length; i++){
             str += letters[i];
         }
+        return str;
+
         /*
         if (str.equals("ESTJ")) {
             return "1";

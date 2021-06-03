@@ -41,7 +41,7 @@ public class QuestionBank {
 
     public static double[][] mPersonalityScore = {{0, 0}, {0, 0}, {0, 0}, {0,0}};
 
-    public static void updateQuestion(int i, boolean bool){
+    public static void updateQuestion(double answerA[], double answerB[], int i, boolean bool){
         int remainder = i % 4;
         int index = 0;
         //Finds question catagory
@@ -53,11 +53,10 @@ public class QuestionBank {
             index = 3;
         }
         if (bool){
-            mPersonalityScore[index][0]++;
-
+            answerA[index]++;
         }
         else if (!bool){
-            mPersonalityScore[index][1]++;
+            answerB[index]++;
         }
     }
 
