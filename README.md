@@ -21,11 +21,11 @@ It will say fun responses based on the answer you pick and should be a fun way t
 -Intent
 -- My program will utilize intents to open and initialize activities
 
-Self less vs Self centered 
-E          I
-Strength vs speed
-S          N
-Magic vs natural
-T          F
-Open identity vs Secret identity
-J          P
+Self less (E) vs Self centered (I)
+
+Strength (S) vs speed (N)
+
+Magic (T) vs natural (F)
+
+Open identity (J) vs Secret identity (P)
+
