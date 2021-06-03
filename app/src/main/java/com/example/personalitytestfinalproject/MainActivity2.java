@@ -22,19 +22,17 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        double[] answerA = new double[4];
+        double[] answerB = new double[4];
         setContentView(R.layout.activity_main2);
         mChoiceTwo = (Button) findViewById(R.id.choice_two);
         mChoiceTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 makeTop("Interesting!");
-                double[] answerA = new double[4];
-                double[] answerB = new double[4];
-                if (v.getId() == R.id.choice_one) {
-                    QuestionBank.updateQuestion(answerA,answerB,1, true);
-                } else if (v.getId() == R.id.choice_two) {
-                    QuestionBank.updateQuestion(answerA,answerB, 1, false);
-                }
+                QuestionBank.updateQuestion(answerA,answerB, 1, false);
+                System.out.println("b");
+
                 if (quetionNum == 15) {
                     //mQuetions.setText("");
                     mQuetions.setText(finalPersonality(answerA, answerB));
@@ -54,13 +52,9 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 makeTop("So you are one of those people!");
-                double[] answerA = new double[4];
-                double[] answerB = new double[4];
-                if (v.getId() == R.id.choice_one) {
-                    QuestionBank.updateQuestion(answerA,answerB,1, true);
-                } else if (v.getId() == R.id.choice_two) {
-                    QuestionBank.updateQuestion(answerA,answerB, 1, false);
-                }
+                QuestionBank.updateQuestion(answerA,answerB,1, true);
+                System.out.println("a");
+
                 if (quetionNum == 15) {
                     mQuetions.setText(finalPersonality(answerA, answerB));
                     //instead of "" put score
